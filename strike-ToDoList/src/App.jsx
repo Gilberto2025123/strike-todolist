@@ -1,12 +1,21 @@
-import { useState } from 'react'
+
+import NavBar from './components/NavBar/Navbar'
+import ResetButton from './components/ResetButton/ResetButton'
+import TaskBox from './components/TaskBox/TaskBox'
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+const App = () => {
+
 
   return (
     <>
-      
+      <NavBar />
+      <ResetButton />
+      <TaskBox />
+
     </>
   )
 }
