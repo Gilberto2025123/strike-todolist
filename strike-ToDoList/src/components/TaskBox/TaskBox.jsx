@@ -1,14 +1,23 @@
+
+import { useState } from "react"
+
 const TaskBox = () => {
+
+
+// const handleInput = () => {
+//   return(
+
+//   )
+
+// }
 
     return (
      <> 
-
-     <input className="TaskInput">Add your task here...</input>
-     <input className="TaskItem">1</input>
-     <input className="TaskItem">2</input>
-     <input className="TaskItem">3</input>
-     <input className="TaskItem">4</input>
+<div>
+     <input defaultValue={`Add your task here...`} className="taskinput"/>
+     <button className ="blackcross"> + </button>  
      
+ </div> 
      </>
     )
 } 
