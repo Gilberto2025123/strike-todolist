@@ -22,13 +22,12 @@ return (
    
  
 
-}
 
     return (
     
 <div>
      <input defaultValue={`Add your task here...`} className="taskinput" />
-     <button className ="blackcross" handleInput={handleInputItems} img src="" alt=""> + </button>
+     <button className ="blackcross" handleInput="" img src="" alt=""> + </button>
 
      <label input>{newListItems}</label>
      <label input>{newListItems}</label>
@@ -37,6 +36,7 @@ return (
  </div> 
      
     )
+}
 
 
 export default TaskBox
