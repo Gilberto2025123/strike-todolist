@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ResetButton from "../ResetButton/ResetButton"
 
 const TaskBox = () => {
 
@@ -22,18 +23,21 @@ const deleteText = (counter) => {
 }
 
   
-   
- 
+
+const [checked, setChecked] = useState(false);
+
 
 
     return (
     
 <div>
+    <ResetButton onClick={resetText} /> 
      <input placeholder={`Add your task here...`} className="taskinput" onBlur={newListItems} />
      <button className ="blackcross" handleInput="" img src="" alt=""> + </button>
 
       {addtext && addtext.map((text, counter) => {
-            return <span><p defaultChecked>{text}</p> <button onClick={() => deleteText(counter)}>Delete</button></span>
+            return <span> <p type="checkbox" checked={checked} onChange={() => setChecked(!checked)}
+>{text}</p> <button onClick={() => deleteText(counter)}>Delete</button></span>
        })}
      
  </div> 

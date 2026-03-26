@@ -1,13 +1,12 @@
 
-const ResetButton = () => {
+const ResetButton = ({resetText}) => {
 
 
-    // onClick={handleReset}
 
     return (
      <>
      <b>
-        <button className="reset_button" >Reset</button>
+        <button className="reset_button" type="button" onClick={resetText}>Reset</button>
     </b>
      
      </>
