@@ -1,23 +1,26 @@
-
 import { useState } from "react"
 
 const TaskBox = () => {
 
-const [addtext, setAddText] = useState(true)
+const [addtext, setAddText] = useState([])
 
-const newListItems = () => {
- 
-return (
-    newListItems(addtext)
-)
+const newListItems = (e) => {
 
-
+    setAddText([...addtext, e.target.value])
 
 }
 
+const resetText = () => {
+    setAddText([])
+}
 
-// const handleInputItems = (input) => {
-//   return( <input defaultChecked /> &&  setInput(true))
+const deleteText = (counter) => {
+    const filteredArr = addtext.filter((text)=> {
+        return text != addtext[counter]
+    })
+        setAddText(filteredArr)
+}
+
   
    
  
@@ -26,12 +29,12 @@ return (
     return (
     
 <div>
-     <input defaultValue={`Add your task here...`} className="taskinput" />
+     <input placeholder={`Add your task here...`} className="taskinput" onBlur={newListItems} />
      <button className ="blackcross" handleInput="" img src="" alt=""> + </button>
 
-     <label input>{newListItems}</label>
-     <label input>{newListItems}</label>
-     <label input>{newListItems}</label>  
+      {addtext && addtext.map((text, counter) => {
+            return <span><p defaultChecked>{text}</p> <button onClick={() => deleteText(counter)}>Delete</button></span>
+       })}
      
  </div> 
      
